@@ -603,7 +603,7 @@ JSTL 사용방법
 		참고 ]
 			delims 속성은 여러구분문자를 동시에 사용할 수 있다.
 			
-9: <c:redirect>
+9. <c:redirect>
 	==> 강제로 요청을 변경하는
 		response.sendRedirect()에 해당하는 태그
 		
