@@ -8,6 +8,10 @@ import javax.servlet.http.*;
 
 @WebServlet("/test/login.pink")
 public class Login extends HttpServlet {
+	public void init() throws ServletException {
+		System.out.println("######### 로그인 페이지 요청 #######");
+	}
+	
 	public void service(HttpServletRequest req, HttpServletResponse resp) 
 										throws ServletException, IOException {
 		/*

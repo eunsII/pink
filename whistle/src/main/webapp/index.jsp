@@ -13,18 +13,23 @@
 		$('#obtn').click(function(){
 			$(location).attr('href', '/whistle/test/logout.pink');
 		});
+		$('#lbtn').click(function(){
+			$(location).attr('href', '/whistle/test/login.pink');
+		});
 	});
 </script>
 </head>
 <body>
-	<c:if test="${not empty SID}">
-		<h1 style="text-align: center;">Hello ${SID}</h1>
-	</c:if>
-	<c:if test="${empty SID}">
-		<h1 style="text-align: center;">Hello JSP!</h1>
-	</c:if>
 	<div class="w3-content mx650">
+<c:if test="${not empty SID}">
+		<h1 class="w3-blue w3-padding w3-center">Hello ${SID}</h1>
 		<div class="w3-col m2 w3-button w3-red" id="obtn">logout</div>
+		<div class="w3-col m2 w3-button w3-green w3-right" id="ibtn">myInfo</div>
+</c:if>
+<c:if test="${empty SID}">
+		<h1 class="w3-blue w3-padding w3-center">Hello JSP!</h1>
+		<div class="w3-col m2 w3-button w3-pink" id="lbtn">login</div>
+</c:if>
 	</div>
 </body>
 </html>
