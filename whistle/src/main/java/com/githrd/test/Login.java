@@ -36,10 +36,10 @@ public class Login extends HttpServlet {
 			// 이 작업은 지금 요청에서 메인페이지로 보내는 요청을 다시 만드는 작업이된다.
 			// 따라서 리다이렉트 하면 된다.
 			resp.sendRedirect("/whistle/");
+		} else {
+			String view = "/WEB-INF/views/test/member/login.jsp";
+			RequestDispatcher rd = req.getRequestDispatcher(view);
+			rd.forward(req, resp);
 		}
-		
-		String view = "/WEB-INF/views/test/member/login.jsp";
-		RequestDispatcher rd = req.getRequestDispatcher(view);
-		rd.forward(req, resp);
 	}
 }
