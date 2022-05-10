@@ -18,6 +18,7 @@ public class LoginProc extends HttpServlet {
 		if(sid != null) {
 			// 이미 로그인한 경우이므로 메인으로 리다이렉트 시킨다.
 			resp.sendRedirect("/whistle/");
+			return;
 		}
 		
 		// 할일
