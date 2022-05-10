@@ -7,7 +7,6 @@
 <link rel="stylesheet" type="text/css" href="/whistle/resources/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/whistle/resources/css/base.css">
 <script type="text/javascript" src="/whistle/resources/js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/whistle/resources/js/loginTest.js"></script>
 <style type="text/css">
 	label {
 		font-size: 16pt;
@@ -45,5 +44,6 @@
 		</div>
 		<div class="w3-col w3-padding w3-card-4 w3-hide"><span id="msg">${SID} 님은 이미 로그인했습니다!!!</span></div>
 	</div>
+<script type="text/javascript" src="/whistle/resources/js/test/login.js"></script>
 </body>
 </html>
