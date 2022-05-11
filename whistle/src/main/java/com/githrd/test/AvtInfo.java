@@ -21,12 +21,15 @@ public class AvtInfo extends HttpServlet {
 		AvatarVO aVO = aDao.getAnoInfo(ano);
 		// 3. 응답 문서 만들고(ano, savename, dir, gen)
 		PrintWriter pw = resp.getWriter(); // 응답 문서 도구 가져오고...
+		/*
 		pw.println("{");
 		pw.println("\"ano\": \"" + aVO.getAno() + "\",");
 		pw.println("\"savename\": \"" + aVO.getSavename() + "\",");
 		pw.println("\"dir\": \"" + aVO.getDir() + "\",");
 		pw.println("\"gen\": \"" + aVO.getGen() + "\"");
 		pw.println("}");
+		*/
+		pw.print(aVO.getJson());
 	}
 
 }
