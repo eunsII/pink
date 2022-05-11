@@ -186,6 +186,8 @@ index page 처리
 		가입일
 		성별
 		아바타이미지
+		
+	url : '/whistle/test/myInfo.pink'
 
 
 
