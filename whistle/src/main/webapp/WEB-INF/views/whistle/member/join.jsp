@@ -83,28 +83,28 @@
 				<label class="w3-col s3 w3-right-align clrgrey ft14 mgb10">아 바 타 : </label>
 				<div class="w3-col s8 mgl10 mgb10 w3-center">
 						<div class="avtboxfr w3-center w3-margin-top" id="mavt">
-					
-						
+		<c:forEach var="data" items="${LIST}">
+			<c:if test="${data.gen eq 'M'}">
 						 	<div class="avtbox">
-						 		<label for="mavt">
-						 			<img src="/whistle/resources/img/avatar/" class="w3-col avtimg">
+						 		<label for="mavt${data.ano}">
+						 			<img src="/whistle/resources/img/avatar/${data.savename}" class="w3-col avtimg">
 						 		</label>
-						 		<input type="radio" name="ano" id="mavt" value="">
+						 		<input type="radio" name="ano" id="mavt${data.ano}" value="${data.ano}">
 						 	</div>
-						 
-					
+			</c:if>
+		</c:forEach>
 						</div>
 						 <div class="avtboxfr w3-center w3-margin-top" id="favt">
-					
-						 
+		<c:forEach var="data" items="${LIST}">
+			<c:if test="${data.gen eq 'F'}">
 						 	<div class="avtbox">
-						 		<label for="favt">
-						 			<img src="/whistle/resources/img/avatar/" class="w3-col avtimg">
+						 		<label for="favt${data.ano}">
+						 			<img src="/whistle/resources/img/avatar/${data.savename}" class="w3-col avtimg">
 						 		</label>
-						 		<input type="radio" name="ano" id="favt" value="">
+						 		<input type="radio" name="ano" id="favt${data.ano}" value="${data.ano}">
 						 	</div>
-						 
-				 	
+			</c:if>
+		</c:forEach>
 				 		</div>
 				</div>
 			</div>
