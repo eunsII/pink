@@ -1,6 +1,7 @@
 package com.githrd.whistle.dao;
 
 import java.sql.*;
+import java.util.*;
 
 import com.githrd.whistle.db.*;
 import com.githrd.whistle.sql.*;
@@ -98,5 +99,41 @@ public class MemberDao {
 		}
 		
 		return cnt;
+	}
+	
+	// 아바타 리스트 조회 전담 처리함수
+	public ArrayList<MemberVO> getAvtList(){
+		// 반환값 변수
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		// 커넥션
+		con = db.getCon();
+		// 질의명령
+		String sql = mSQL.getSQL(mSQL.SEL_ALL_AVT);
+		// 명령전달도구
+		stmt = db.getSTMT(con);
+		try {
+			// 질의명령 보내고 결과받고
+			rs = stmt.executeQuery(sql);
+			// 반복해서 결과 꺼내고 vo에 담고
+			while(rs.next()) {
+				// 반복할 때마다 아바타 한개의 정보를 기억할 수 있는 VO 가 만들어져야 된다.
+				MemberVO mVO = new MemberVO();
+				// VO 에 아바타 정보 채우고
+				mVO.setAno(rs.getInt("ano"));
+				mVO.setSavename(rs.getString("savename"));
+				mVO.setGen(rs.getString("gen"));
+				
+				// vo가 완성됬으며 리스트에 담고
+				list.add(mVO);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(stmt);
+			db.close(con);
+		}
+		// 리스트 반환하고
+		return list;
 	}
 }

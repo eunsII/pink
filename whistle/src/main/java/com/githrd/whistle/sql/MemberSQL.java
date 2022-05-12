@@ -4,6 +4,7 @@ public class MemberSQL {
 	public final int SEL_LOGIN_CNT 		= 1001;
 	public final int SEL_MEMBER_INFO 	= 1002;
 	public final int SEL_AVT_INFO 		= 1003;
+	public final int SEL_ALL_AVT 		= 1004;
 
 	public final int ADD_MEMBER 		= 3001;
 	
@@ -28,6 +29,15 @@ public class MemberSQL {
 			buff.append("WHERE ");
 			buff.append("	isshow = 'Y' ");
 			buff.append("	AND ano = ? ");
+			break;
+		case SEL_ALL_AVT:
+			buff.append("SELECT ");
+			buff.append("	ano, savename, gen ");
+			buff.append("FROM ");
+			buff.append("	avatar ");
+			buff.append("WHERE ");
+			buff.append("	isshow = 'Y' ");
+			buff.append("	AND gen != 'N' ");
 			break;
 		case SEL_MEMBER_INFO:
 			buff.append("SELECT ");
