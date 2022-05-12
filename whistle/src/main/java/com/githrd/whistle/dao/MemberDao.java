@@ -66,4 +66,37 @@ public class MemberDao {
 		// 데이터 내보내고
 		return cnt;
 	}
+	
+	// 회원 가입 데이터베이스 작업 전담 처리함수
+	public int addMember(MemberVO mVO) {
+		// 반환값 변수
+		int cnt = 0;
+		// 할일
+		// 커넥션
+		con = db.getCon();
+		// 질의명령
+		String sql = mSQL.getSQL(mSQL.ADD_MEMBER);
+		// 명령전달도구
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			// 질의명령 완성하고
+			pstmt.setString(1, mVO.getName());
+			pstmt.setString(2, mVO.getId());
+			pstmt.setString(3, mVO.getPw());
+			pstmt.setString(4, mVO.getMail());
+			pstmt.setString(5, mVO.getTel());
+			pstmt.setInt(6, mVO.getAno());
+			pstmt.setString(7, mVO.getGen());
+			
+			// 질의명령 보내고 결과받고
+			cnt = pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		
+		return cnt;
+	}
 }
