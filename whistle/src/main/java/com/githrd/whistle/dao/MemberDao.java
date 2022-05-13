@@ -168,4 +168,40 @@ public class MemberDao {
 		return cnt;
 	}
 	
+	// 회원 목록 조회 전단 처리함수
+	public ArrayList<MemberVO> getMemberList(){
+		// 반환값 변수
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		// 할일
+		// 커넥션
+		con = db.getCon();
+		// 질의명령
+		String sql = mSQL.getSQL(mSQL.SEL_MEMBER_LIST);
+		// 명령전달도구 준비
+		stmt = db.getSTMT(con);
+		try {
+			// 질의명령 보내고 결과받고
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				// 데이터꺼내서 VO 담고
+				MemberVO mVO = new MemberVO();
+				
+				int mno = rs.getInt("mno");
+				String name = rs.getString("name");
+				
+				mVO.setMno(mno);
+				mVO.setName(name);
+				// VO 리스트에 채우고
+				list.add(mVO);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(stmt);
+			db.close(con);
+		}
+		// 리스트 반환하고
+		return list;
+	}
 }
