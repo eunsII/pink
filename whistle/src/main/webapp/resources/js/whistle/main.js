@@ -10,5 +10,13 @@
 	$('#lbtn').click(function(){
 		$(location).attr('href', '/whistle/member/login.blp');
 	});
+	
+	$('#obtn').click(function(){
+		$(location).attr('href', '/whistle/member/logout.blp');
+	});
+	
+	$('#mlbtn').click(function(){
+		$(location).attr('href', '/whistle/member/memberList.blp');
+	});
 });
  

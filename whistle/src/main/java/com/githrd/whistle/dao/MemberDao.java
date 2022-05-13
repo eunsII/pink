@@ -167,4 +167,5 @@ public class MemberDao {
 		// 데이터 반환하고
 		return cnt;
 	}
+	
 }

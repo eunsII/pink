@@ -30,7 +30,7 @@
 	}
 </style>
 <script type="text/javascript">
-
+	var sessionId = '${SID}';
 </script>
 </head>
 <body>
@@ -52,7 +52,7 @@
 						alert('${SID} 님이 로그인했습니다.');
 					</script>
 
-					<div class="w3-col w3-border-bottom pdb10">
+					<div class="w3-col w3-border-bottom pdb3">
 						<span class="w3-cell m2 w3-button w3-small w3-red w3-hover-light-green w3-right mt0" id="obtn">LogOut</span>
 						<span class="w3-cell m2 w3-button w3-small w3-red w3-hover-light-green w3-left mt0" id="ibtn">회원정보</span>
 					</div>
