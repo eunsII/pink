@@ -36,6 +36,12 @@
 기타		: 	로그인 된 경우 ]
 					redirect : /whistle/main.blp
 --------------------------------------------------------------
+# 아이디체크 처리 요청 
+요청내용	: 	/whistle/member/idCheck.blp
+파라미터	:	id
+컨트롤러	: 	com.githrd.whistle.controller.member.IdCheck
+뷰			:	json
+--------------------------------------------------------------
 # 회원가입 처리 요청 
 요청내용	: 	/whistle/member/joinProc.blp
 파라미터	:	name, id, pw, mail, tel, ano, gen

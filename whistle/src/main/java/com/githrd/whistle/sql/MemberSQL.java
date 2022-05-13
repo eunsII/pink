@@ -5,6 +5,7 @@ public class MemberSQL {
 	public final int SEL_MEMBER_INFO 	= 1002;
 	public final int SEL_AVT_INFO 		= 1003;
 	public final int SEL_ALL_AVT 		= 1004;
+	public final int SEL_ID_CNT 		= 1005;
 
 	public final int ADD_MEMBER 		= 3001;
 	
@@ -20,6 +21,14 @@ public class MemberSQL {
 			buff.append("	isshow = 'Y' ");
 			buff.append("	AND id = ? ");
 			buff.append("	AND pw = ? ");
+			break;
+		case SEL_ID_CNT:
+			buff.append("SELECT ");
+			buff.append("	COUNT(*) cnt ");
+			buff.append("FROM ");
+			buff.append("	member ");
+			buff.append("WHERE ");
+			buff.append("	id = ? ");
 			break;
 		case SEL_AVT_INFO:
 			buff.append("SELECT ");

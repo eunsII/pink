@@ -65,14 +65,14 @@
 				<label for="pw" class="w3-col s3 w3-right-align clrgrey ft14 mgb10">비밀번호 : </label>
 				<div class="w3-col s8 mgl10 mgb10">
 					<input type="password" name="pw" id="pw" class="w3-col w3-input w3-border">
-					<span class="w3-col w3-text-red" id="pwmsg"># 비밀번호는 12345 만 가능합니다.</span>
+					<span class="w3-col w3-text-red w3-center" id="pwmsg"># 비밀번호는 12345 만 가능합니다.</span>
 				</div>
 			</div>
 			<div>
 				<label for="repw" class="w3-col s3 w3-right-align clrgrey ft14 mgb10">pw check : </label>
 				<div class="w3-col s8 mgl10 mgb10">
-					<input type="password" name="repw" id="repw" class="w3-col w3-input w3-border">
-					<span class="w3-col w3-text-red" id="repwmsg"># 비밀번호가 일치하지 않습니다.</span>
+					<input type="password" id="repw" class="w3-col w3-input w3-border">
+					<span class="w3-col w3-text-red w3-center" id="repwmsg"># 비밀번호가 일치하지 않습니다.</span>
 				</div>
 			</div>
 			<div>

@@ -136,4 +136,35 @@ public class MemberDao {
 		// 리스트 반환하고
 		return list;
 	}
+	
+	// 아이디 카운트 조회 전담 처리함수
+	public int getIdCount(String id) {
+		// 반환값 변수
+		int cnt = 0;
+		// 커넥션
+		con = db.getCon();
+		// 질의명령
+		String sql = mSQL.getSQL(mSQL.SEL_ID_CNT);
+		// 명령전달도구 준비
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			// 질의명령 완성
+			pstmt.setString(1, id);
+			// 보내고 결과받고
+			rs = pstmt.executeQuery();
+			// 레코드포인터 한줄 내리고
+			rs.next();
+			
+			// 데이터꺼내서 변수에 담고
+			cnt = rs.getInt("cnt");
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		// 데이터 반환하고
+		return cnt;
+	}
 }
